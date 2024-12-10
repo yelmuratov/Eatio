@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Eatio - Restaurant Food Order Bootstrap Admin Dashboard</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./dashboard/images/favicon.png">
-    <link href="./dashboard/vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="./dashboard/vendor/chartist/css/chartist.min.css">
-    <link href="./dashboard/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
-    <link href="./dashboard/css/style.css" rel="stylesheet">
-	<link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url('/dashboard/images/favicon.png') }}">
+    <link href="{{ url('/dashboard/vendor/jqvmap/css/jqvmap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url('/dashboard/vendor/chartist/css/chartist.min.css') }}">
+    <link href="{{ url('/dashboard/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
+    <link href="{{ url('/dashboard/css/style.css') }}" rel="stylesheet">
+    <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
 </head>
 <body>
     <!--*******************
@@ -707,8 +707,8 @@
 					<li><a href="/foods"><i class="fa fa-cutlery"></i> Foods</a></li>
 					<li><a href="page-analytics.html"><i class="fa fa-bar-chart"></i> Analytics</a></li>
 					<li><a href="page-review.html"><i class="fa fa-star"></i> Review</a></li>
+					<li><a href="{{route('orders')}}"><i class="fa fa-list"></i> Order List</a></li>
 					<li><a href="page-order.html"><i class="fa fa-shopping-cart"></i> Order</a></li>
-					<li><a href="page-order-list.html"><i class="fa fa-list"></i> Order List</a></li>
 					<li><a href="page-general-customers.html"><i class="fa fa-users"></i> General Customers</a></li>
                 </ul>
 			</div>
@@ -740,24 +740,24 @@
         Scripts
     ***********************************-->
     <!-- Required vendors -->
-    <script src="./dashboard/vendor/global/global.min.js"></script>
-	<script src="./dashboard/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-	<script src="./dashboard/vendor/chart.js/Chart.script.min.js"></script>
-    <script src="./dashboard/js/custom.min.js"></script>
-    <script src="./dashboard/js/deznav-init.js"></script>
+    <script src="{{ url('/dashboard/vendor/global/global.min.js') }}"></script>
+	<script src="{{ url('/dashboard/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
+	<script src="{{ url('/dashboard/vendor/chart.js/Chart.script.min.js') }}"></script>
+    <script src="{{ url('/dashboard/js/custom.min.js') }}"></script>
+    <script src="{{ url('/dashboard/js/deznav-init.js') }}"></script>
 	
 	<!-- Counter Up -->
-    <script src="./dashboard/vendor/waypoints/jquery.waypoints.min.js"></script>
-    <script src="./dashboard/vendor/jquery.counterup/jquery.counterup.min.js"></script>
+    <script src="{{ url('/dashboard/vendor/waypoints/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ url('/dashboard/vendor/jquery.counterup/jquery.counterup.min.js') }}"></script>
 		
 	<!-- Apex Chart -->
-	<script src="./dashboard/vendor/apexchart/apexchart.js"></script>	
+	<script src="{{ url('/dashboard/vendor/apexchart/apexchart.js') }}"></script>	
 	
 	<!-- Chart piety plugin files -->
-	<script src="./dashboard/vendor/peity/jquery.peity.min.js"></script>
+	<script src="{{ url('/dashboard/vendor/peity/jquery.peity.min.js') }}"></script>
 	
 	<!-- Dashboard 1 -->
-	<script src="./dashboard/js/dashboard/dashboard-1.js"></script>
+	<script src="{{ url('/dashboard/js/dashboard/dashboard-1.js') }}"></script>
     <script>
         document.querySelector('.nav-control .hamburger').addEventListener('click', function() {
             document.getElementById('main-wrapper').classList.toggle('menu-toggle');

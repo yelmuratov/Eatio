@@ -46,6 +46,7 @@
     
     <section class="ftco-section">
         <div class="container">
+            @if($cartCount > 0)
             <div class="row justify-content-center mb-5 pb-2">
                 <div class="col-md-7 text-center heading-section ftco-animate">
                     <span class="subheading">Checkout</span>
@@ -103,42 +104,8 @@
             <div class="row justify-content-center mt-5">
                 <div class="col-md-8">
                     <form wire:submit.prevent="placeOrder" class="billing-form">
-                        <h3 class="mb-4 billing-heading">Billing Details</h3>
+                        <h3 class="mb-4 billing-heading">Payment Details</h3>
                         <div class="row align-items-end">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="deliveryOption">Delivery Option</label>
-                                    <select wire:model="deliveryOption" class="form-control">
-                                        <option value="delivery">Delivery</option>
-                                        <option value="eat_there">Eat There</option>
-                                    </select>
-                                </div>
-                            </div>
-                            @if($deliveryOption == 'delivery')
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="fullname">Full Name</label>
-                                    <input type="text" wire:model="fullname" class="form-control" placeholder="Full Name">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="email">Email Address</label>
-                                    <input type="email" wire:model="email" class="form-control" placeholder="Email Address">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="phone">Phone</label>
-                                    <input type="text" wire:model="phone" class="form-control" placeholder="Phone">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="address">Address</label>
-                                    <input type="text" wire:model="address" class="form-control" placeholder="Address">
-                                </div>
-                            </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="paymentType">Payment Type</label>
@@ -149,20 +116,6 @@
                                     </select>
                                 </div>
                             </div>
-                            @else
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="tableNumber">Table Number</label>
-                                    <input type="text" wire:model="tableNumber" class="form-control" placeholder="Table Number">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="specialRequests">Special Requests</label>
-                                    <textarea wire:model="specialRequests" class="form-control" placeholder="Special Requests"></textarea>
-                                </div>
-                            </div>
-                            @endif
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <input type="submit" value="Place Order" class="btn btn-primary py-3 px-4">
@@ -172,6 +125,14 @@
                     </form><!-- END -->
                 </div>
             </div>
+            @else
+            <div class="row justify-content-center mb-5 pb-2">
+                <div class="col-md-7 text-center heading-section ftco-animate">
+                    <span class="subheading">Checkout</span>
+                    <h2 class="mb-4">Your cart is empty</h2>
+                </div>
+            </div>
+            @endif
         </div>
     </section>
 </div>

@@ -88,7 +88,6 @@
 									</div>
 								</div>
 								<p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
-                                <input type="number" wire:model="quantities.{{$food->id}}" min="1" class="form-control" placeholder="Quantity">
                                 <button wire:click="addToCart({{ $food->id }})" class="btn btn-primary" @if(isset($cart[$food->id])) disabled @endif>Add to Cart</button>
 							</div>
 						</div>
