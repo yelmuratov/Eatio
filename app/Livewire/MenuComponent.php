@@ -12,13 +12,10 @@ class MenuComponent extends Component
     public $foods;
     public $categories;
     public $cartCount = 0;
-    public $quantities = [];
-    public $cart = [];
 
     public function mount()
     {
-        $this->cart = Session::get('cart', []);
-        $this->cartCount = array_sum($this->cart);
+        $this->cartCount = count(Session::get('cart', []));
     }
 
     public function render()
@@ -30,13 +27,13 @@ class MenuComponent extends Component
 
     public function addToCart($foodId)
     {
-        $quantity = $this->quantities[$foodId] ?? 1;
-        if (isset($this->cart[$foodId])) {
-            $this->cart[$foodId] += $quantity;
+        $cart = Session::get('cart', []);
+        if (isset($cart[$foodId])) {
+            $cart[$foodId]++;
         } else {
-            $this->cart[$foodId] = $quantity;
+            $cart[$foodId] = 1;
         }
-        Session::put('cart', $this->cart);
-        $this->cartCount = array_sum($this->cart);
+        Session::put('cart', $cart);
+        $this->cartCount = array_sum($cart);
     }
 }

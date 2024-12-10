@@ -74,11 +74,6 @@
                 </div>
                 @endforeach
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-6 text-center">
-                    <a href="{{ route('checkout') }}" class="btn btn-primary py-3 px-4">Proceed to Checkout</a>
-                </div>
-            </div>
         </div>
     </section>
 </div>

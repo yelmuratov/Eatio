@@ -7,7 +7,6 @@ use App\Livewire\DashboardComponent;
 use App\Livewire\FoodComponent;
 use App\Livewire\MenuComponent;
 use App\Livewire\CartComponent;
-use App\Livewire\CheckoutComponent;
 
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/admin', DashboardComponent::class)->name('admin');
@@ -24,6 +23,5 @@ Route::get('/categories',CategoryComponent::class)->name('categories');
 Route::get('/foods',FoodComponent::class)->name('foods');
 Route::get('/menu', MenuComponent::class)->name('menu');
 Route::get('/cart', CartComponent::class)->name('cart');
-Route::get('/checkout', CheckoutComponent::class)->name('checkout');
 
 
