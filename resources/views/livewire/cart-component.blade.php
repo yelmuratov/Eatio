@@ -51,29 +51,50 @@
                     <h2 class="mb-4">Cart Items</h2>
                 </div>
             </div>
+            @if($cartItems)
             <div class="row">
                 @foreach($cartItems as $item)
                 <div class="col-md-6 col-lg-4">
                     <div class="menu-wrap">
-                        <div class="menus d-flex ftco-animate">
+                        <div class="menus d-flex ">
                             <div class="menu-img img" style="background-image: url(storage/photos/{{$item->image}});"></div>
                             <div class="text">
                                 <div class="d-flex">
                                     <div class="one-half">
                                         <h3>{{$item->name}}</h3>
-                                        <p>Quantity: {{$item->quantity}}</p>
+                                        <div class="quantity-controls">
+                                            <button wire:click.prevent="decrementQuantity({{ $item->id }})" class="btn btn-secondary" @if($item->quantity <= 1) disabled @endif>-</button>
+                                            <span>{{$item->quantity}}</span>
+                                            <button wire:click.prevent="incrementQuantity({{ $item->id }})" class="btn btn-secondary">+</button>
+                                        </div>
                                     </div>
                                     <div class="one-forth">
                                         <span class="price">${{$item->price}}</span>
                                     </div>
                                 </div>
                                 <p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
+                                <button wire:click="removeItem({{ $item->id }})" class="btn btn-danger">Remove</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 @endforeach
             </div>
+<<<<<<< HEAD
+=======
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <a href="{{ route('checkout') }}" class="btn btn-primary py-3 px-4">Proceed to Checkout</a>
+                </div>
+            </div>
+            @else
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+            @endif
+>>>>>>> my-new-branch
         </div>
     </section>
 </div>

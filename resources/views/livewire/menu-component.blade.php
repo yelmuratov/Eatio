@@ -88,7 +88,11 @@
 									</div>
 								</div>
 								<p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
+<<<<<<< HEAD
                                 <button wire:click="addToCart({{ $food->id }})" class="btn btn-primary">Add to Cart</button>
+=======
+                                <button wire:click="addToCart({{ $food->id }})" class="btn btn-primary" @if(isset($cart[$food->id])) disabled @endif>Add to Cart</button>
+>>>>>>> my-new-branch
 							</div>
 						</div>
                     </div>

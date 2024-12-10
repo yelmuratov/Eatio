@@ -7,6 +7,12 @@ use App\Livewire\DashboardComponent;
 use App\Livewire\FoodComponent;
 use App\Livewire\MenuComponent;
 use App\Livewire\CartComponent;
+<<<<<<< HEAD
+=======
+use App\Livewire\CheckoutComponent;
+use App\Livewire\OrderComponent;
+use App\Livewire\OrderDetails;
+>>>>>>> my-new-branch
 
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/admin', DashboardComponent::class)->name('admin');
@@ -23,5 +29,11 @@ Route::get('/categories',CategoryComponent::class)->name('categories');
 Route::get('/foods',FoodComponent::class)->name('foods');
 Route::get('/menu', MenuComponent::class)->name('menu');
 Route::get('/cart', CartComponent::class)->name('cart');
+<<<<<<< HEAD
+=======
+Route::get('/checkout', CheckoutComponent::class)->name('checkout');
+Route::get('/orders', OrderComponent::class)->name('orders');
+Route::get('/order-details/{orderId}', OrderDetails::class)->name('order.details');
+>>>>>>> my-new-branch
 
 
