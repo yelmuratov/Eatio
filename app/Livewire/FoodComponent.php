@@ -19,13 +19,11 @@ class FoodComponent extends Component
     public $price;
     public $image;
     public $food_id;
-    public $searchTerm = ''; // Initialize searchTerm
+    public $searchTerm='';
 
     public function render()
     {
-        $this->foods = Food::where('name', 'like', '%' . $this->searchTerm . '%')
-            ->orWhere('description', 'like', '%' . $this->searchTerm . '%')
-            ->get();
+        $this->foods = Food::where('name', 'like', '%' . $this->searchTerm . '%')->get();
         $this->categories = Category::all();
 
         return view('livewire.food-component')->layout('components.layouts.app');
@@ -110,5 +108,9 @@ class FoodComponent extends Component
         $this->description = '';
         $this->price = '';
         $this->image = null;
+    }
+
+    public function search($text){
+        dd($this->searchTerm);
     }
 }

@@ -8,13 +8,10 @@
                     <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addFoodModal">Add Food +</a>
                 </div>
                 <div class="card-body">
-                    <div class="row mb-3">
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" placeholder="Search Foods..." wire:model="searchTerm">
-                        </div>
-                    </div>
                     <div class="table-responsive">
                         <table id="foodsTable" class="table table-responsive-sm">
+                            <input type="text" class="form-control" placeholder="Search Foods..." wire:model.debounce.500ms="searchTerm">
+                            <h1>{{$searchTerm}}</h1>
                             <thead>
                                 <tr>
                                     <th>#</th>
