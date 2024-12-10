@@ -36,6 +36,7 @@
                     <li class="nav-item"><a href="reservation.html" class="nav-link">Reservation</a></li>
                     <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="{{route('cart')}}" class="nav-link">Cart ({{ $cartCount }})</a></li>
                 </ul>
             </div>
         </div>
@@ -87,6 +88,8 @@
 									</div>
 								</div>
 								<p><span>Meat</span>, <span>Potatoes</span>, <span>Rice</span>, <span>Tomatoe</span></p>
+                                <input type="number" wire:model="quantities.{{$food->id}}" min="1" class="form-control" placeholder="Quantity">
+                                <button wire:click="addToCart({{ $food->id }})" class="btn btn-primary" @if(isset($cart[$food->id])) disabled @endif>Add to Cart</button>
 							</div>
 						</div>
                     </div>
