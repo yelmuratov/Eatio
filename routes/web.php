@@ -5,6 +5,7 @@ use App\Http\Controllers\MainController;
 use App\Livewire\CategoryComponent;
 use App\Livewire\DashboardComponent;
 use App\Livewire\FoodComponent;
+use App\Livewire\MenuComponent;
 
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/admin', DashboardComponent::class)->name('admin');
@@ -19,5 +20,6 @@ Route::get('/categories',CategoryComponent::class)->name('categories');
 
 // Food Routes
 Route::get('/foods',FoodComponent::class)->name('foods');
+Route::get('/menu', MenuComponent::class)->name('menu');
 
 
